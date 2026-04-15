@@ -1,0 +1,23 @@
+<html lang="vi">
+  <head> </head>
+  <body>
+    <style>
+      #text {
+        color: green;
+      }
+    </style>
+    <div id="text"></div>
+    <script>
+      function loadData() {
+        fetch("http://localhost:3000/history")
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById("text").textContent = data.message;
+            console.log(data);
+          });
+      }
+      loadData();
+      setInterval(loadData, 1000);
+    </script>
+  </body>
+</html>
