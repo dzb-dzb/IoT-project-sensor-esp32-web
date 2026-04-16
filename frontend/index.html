@@ -107,7 +107,7 @@
 
       async function loadHistory() {
         try {
-          const res = await fetch("http://192.168.1.2:3000/history");
+          const res = await fetch("https://server-ta9g.onrender.com/update");
           const history = await res.json();
 
           console.log(history);
