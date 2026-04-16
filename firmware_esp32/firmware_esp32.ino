@@ -20,7 +20,7 @@ DHT dht(DHTPIN, DHTTYPE);
 String saveTime(){
   struct tm times;
   if(!getLocalTime(&times)){
-    return "unknow";
+    return "unknown";
   }
   char currentTime[10];
   strftime(currentTime, sizeof(currentTime), "%H:%M:%S", &times);
@@ -45,6 +45,11 @@ void setup(){
 void loop(){
   float t = dht.readTemperature();
   float h = dht.readHumidity();
+  
+  if (isnan(t) || isnan(h)) {
+  Serial.println("Lỗi đọc DHT!");
+  return;
+  }
 
   if(WiFi.status() == WL_CONNECTED){
     HTTPClient http;
@@ -58,8 +63,15 @@ void loop(){
     Serial.println(time);
     http.end();
   }
+  if(WiFi.status() != WL_CONNECTED) {
+  Serial.println("Mất WiFi, đang reconnect...");
+  WiFi.disconnect();
+  WiFi.begin(ssid, pass);
+  delay(2000);
+  return;
+  }
 
   Serial.println(t);
   Serial.println(h);
-  // delay(1000);
+  delay(1000); 
 }
