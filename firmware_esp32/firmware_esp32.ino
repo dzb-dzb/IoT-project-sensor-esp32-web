@@ -6,14 +6,14 @@
 #define DHTPIN 4
 #define DHTTYPE DHT22
 
-const char* serverUrl = "http://192.168.1.6:3000/update";
+const char* serverUrl = "http://-------------------/update";
 
 const char* serverTime = "pool.ntp.org";
 const bool gmtSeason = 0;
 const long gmtViet = 3600 * 7;
 
-const char* ssid = "Ong Thuong";
-const char* pass = "123456789@";
+const char* ssid = "----------";
+const char* pass = "----------";
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -61,5 +61,5 @@ void loop(){
 
   Serial.println(t);
   Serial.println(h);
-  delay(1000);
+  // delay(1000);
 }
