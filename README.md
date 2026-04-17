@@ -3,6 +3,7 @@
 Hệ thống giám sát nhiệt độ và độ ẩm thời gian thực sử dụng **ESP32**, truyền dữ liệu lên Server và hiển thị trực quan qua trang Web giúp người dùng có thể truy cập dễ dàng qua Internet.
 
 🔗 **Link truy cập trang web:** [Tại đây](https://dzb-dzb.github.io/IoT-project-sensor-esp32-web/)
+   **Xem video demo của dự án:** [Tại đây](https://github.com/user-attachments/assets/06d26108-521b-4648-8ab5-cb4360ed4bea)
 
 ---
 
